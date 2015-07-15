@@ -1,0 +1,38 @@
+extends layout
+
+block yield
+  
+  .window.ucRecommendation.mfp-hide#test-window-2
+    .ucRecommendation-content
+      
+  .window.mfp-hide#test-window
+    .ucReview
+      .ucReview-name Мнение Александра Новикова
+      .ucReview-post Генерального директора компании “STAHL”
+      .ucReview-content
+        p Мы осуществляем взыскание задолженности на всей территории Российской Федерации с предприятий любых форм собственности, отрасли и размеров. Мы успешно возвращаем долги, как с небольших частных компаний, так и с крупных государственных корпораций. При взыскании с частных компаний очень важно, чтобы организация-должник была реально действующей компанией. Мы не занимаемся взысканием долгов с фирм-однодневок, а также не работаем с безнадёжными долгами. Мы обеспечим эффективную защиту Ваших интересов при взыскании долгов от 700 тысяч рублей! Для определения перспективы возврата задолженности, мы проводим бесплатный экспресс-анализ перспективы взыскания долга за 24 часа! 
+  
+  .ucBreadcrumbs: .container
+    .ucBreadcrumbs-link: a(href="#") Главная страница
+    .ucBreadcrumbs-link Клиенты
+
+  .ucPageDescription: .container
+    h1 Клиенты
+    p В этом разделе представлены некоторые клиенты компании ЮРКОЛЛЕГИЯ, а так же отзывы о нашей работе.
+  
+  - var i = 0
+  .ucClients: .container: .row
+    while i < 4
+      .col-xs-3: .ucClient
+        a.ucClient-logo.toggle-window(href="#test-window-2"): img(src="assets/images/ex-client-1.png", alt="")
+        a.ucClient-show.toggle-window(href="#test-window")
+      .col-xs-3: .ucClient
+        a.ucClient-logo.toggle-window(href="#test-window-2"): img(src="assets/images/ex-client-2.png", alt="")
+        a.ucClient-show(href="#")
+      .col-xs-3: .ucClient
+        a.ucClient-logo(href="#"): img(src="assets/images/ex-client-3.png", alt="")
+        a.ucClient-show(href="#")
+      .col-xs-3: .ucClient
+        a.ucClient-logo(href="#"): img(src="assets/images/ex-client-4.png", alt="")
+        a.ucClient-show(href="#")
+      - i++

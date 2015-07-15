@@ -1,0 +1,21 @@
+{
+  "name": "uc",
+  "version": "0.0.0",
+  "authors": [
+    "pavelpipus"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "jquery-backstretch": "~2.0.4",
+    "magnific-popup": "~1.0.0",
+    "jquery.formstyler": "~1.7.1"
+  }
+}

@@ -1,0 +1,82 @@
+extends layout
+
+block yield
+  .ucPageDescription: .container
+    h1.h1--small Взыскание долгов с юридических лиц
+    p.p--important Юридическая компания ЮРКОЛЛЕГИЯ оказывает <a href="#">услуги по взысканию</a> долгов  на всей территории России с 1999 года.
+    
+  .container
+    ul.ad-services
+      li: a(href="#") Досудебное взыскание
+      li: a(href="#") Взыскание долга в арбитражном суде
+      li: a(href="#") По исполнительному листу
+  
+  .m-slider
+    .m-slider-carousel
+      .m-slider-slide
+        .scene(style='position: relative; width: 960px; margin: 0 auto; height: 560px;')
+          .parallax(data-strength='.2' data-axis='x' style='position: absolute; width: 1920px; height: 600px; left: 50%; margin-left: -960px; top: 0px;'): img(src="assets/images/scene--1-0.png", alt="")
+          .parallax(data-strength='.1' data-axis='both' style='position: absolute; width: 560px; height: 400px; left: 50%; margin-left: -280px; top: 20px;'): img(src="assets/images/scene--1-1.png", alt="")
+        .m-slide-content: p Самая свежая<br/>информация<br/>о должниках
+      
+      .m-slider-slide
+        .scene(style='position: relative; width: 960px; margin: 0 auto; height: 560px;')
+          .parallax(data-strength='.2' data-axis='x' style='width: 1041px; height: 346px; position: absolute; top: 150px; left: 140px;'): img(src="assets/images/scene--2-1.png", alt="")
+          .parallax(data-strength='0' data-axis='x' style='width: 911px; height: 450px; position: absolute; top: 90px; left: 90px;'): img(src="assets/images/scene--2-2.png", alt="")
+        .m-slide-content: p Все эти годы<br/>мы работаем<br/>для Вас
+      
+      .m-slider-slide
+        .scene(style='position: relative; width: 960px; margin: 0 auto; height: 560px;')
+          .parallax(data-strength='.2' data-axis='x' style='width: 1920px; height: 820px; position: absolute; top: -200px; left: 50%; margin-left: -960px;'): img(src="assets/images/scene--3-0.png", alt="")
+        .m-slide-content: p Реактивная<br/>скорость<br/>взыскания
+      
+      .m-slider-slide
+        .scene(style='position: relative; width: 960px; margin: 0 auto; height: 560px;')
+          .parallax(data-strength='.2' data-axis='x' style='width: 850px; height: 465px; position: absolute; top: 5px; left: 45px;'): img(src="assets/images/scene--4-0.png", alt="")
+          .route.route--1(style="position: absolute; left: 145px; top: 215px;")
+            .route-plane(style='position: absolute; left: 0px; top: 25px;')
+          .route.route--2(style="position: absolute; left: 780px; top: 260px;")
+            .route-plane(style='position: absolute; left: 6px; top: 114px;')
+        .m-slide-content: p Взыскание<br/>долгов по<br/>всей России
+        
+    .m-slider-container
+      a.free-offer(href="#") Бесплатный<br/>экспресс анализ<br/>должника
+      a.m-slider-control.m-slider-control--prev(href="#")
+      a.m-slider-control.m-slider-control--next(href="#")
+      
+      .m-news-slider
+        .m-news-carousel
+          .m-news-slide
+            h5 Июнь 2015
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, accusantium, iste. Aperiam culpa nemo cum, obcaecati. Ullam, recusandae voluptas dolore iure tempora quos sed, at dicta nisi distinctio tenetur dignissimos.
+          .m-news-slide
+            h5 Июль 2015
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos eligendi numquam modi, in, minus optio laudantium veritatis ducimus beatae molestiae pariatur explicabo fugiat. Maiores officia porro, quae commodi, eum ea.
+        
+        .m-news-more: a(href="#") Архив проектов
+        
+        .m-news-controls
+          a.m-news-control.m-news-control--prev(href="#")
+          a.m-news-control.m-news-control--next(href="#")
+            
+    
+            
+  .container
+    .u-mt--1: .row
+      .col-xs-4
+        h2: a(href="#") Аналитика
+        .lt-news
+          .lt-news-item
+            a(href="#") География взысканий нашей юридической компании в 2014 году в России...
+            p.lt-news-item-datetime 06 августа 2015
+          .lt-news-item
+            a(href="#") География взысканий нашей юридической компании в 2014 году в России...
+            p.lt-news-item-datetime 06 августа 2015
+          .lt-news-item
+            a(href="#") География взысканий нашей юридической компании в 2014 году в России...
+            p.lt-news-item-datetime 06 августа 2015
+      .col-xs-8
+        .ucTypeset
+          h2 Взыскание корпоративных задолженностей
+          p Мы рады приветствовать Вас на официальном сайте юридической компании ЮРКОЛЛЕГИЯ! Возврат долгов юридических лиц – наша основная специализация. Взыскание долгов с физических лиц не входит в спектр наших услуг, вне зависимости от размера задолженности.
+          p Мы осуществляем взыскание задолженности на всей территории Российской Федерации с предприятий любых форм собственности, отрасли и размеров. Мы успешно возвращаем долги, как с небольших частных компаний, так и с крупных государственных корпораций. При взыскании с частных компаний очень важно, чтобы организация-должник была реально действующей компанией. Мы не занимаемся взысканием долгов с фирм-однодневок, а также не работаем с безнадёжными долгами. Мы обеспечим эффективную защиту Ваших интересов при взыскании долгов от 700 тысяч рублей!Для определения перспективы возврата задолженности, мы проводим бесплатный экспресс-анализ перспективы взыскания долга за 24 часа! При возврате дебиторской задолженности организаций, мы используем все законные способы работы с долгами юридических лиц и собственные технологии взыскания корпоративных долгов. 

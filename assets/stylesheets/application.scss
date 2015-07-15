@@ -1,0 +1,890 @@
+@import 'compass';
+@import 'sprite';
+
+@import 'jquery.formstyler';
+
+// Compass Vertical Rhythm config
+$base-font-size: 15px;
+$base-line-height: 20px;
+$rhythm-unit: 'px';
+$round-to-nearest-half-line: true;
+
+.u-color--gray {
+  color: #bbbcc0;
+}
+
+/*
+ * To update sprite.scss use:
+ * sprity create /Users/pavel/Desktop/projects/uc/assets/images /Users/pavel/Desktop/projects/uc/assets/images/src/*.png -s ../stylesheets/sprite.scss --processor sprity-sass --orientation binary-tree
+ */
+
+* {
+  &,
+  &:after,
+  &:before {
+    box-sizing: border-box;
+  }
+}
+
+.debug {
+  &,
+  & * {
+    background: rgba(0, 0, 0, .1);
+    outline: 1px solid rgba(0, 0, 0, 0.2);
+  }
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  font-size: $base-font-size;
+  color: #1b1b1b;
+  line-height: $base-line-height;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  min-width: 984px;
+  letter-spacing: -.01em;
+}
+
+a {
+  color: #1956bf;
+  text-decoration: underline;
+  transition: color .2s linear;
+
+  &:hover {
+    color: #fa114d;
+  }
+}
+
+b {
+  font-weight: bold;
+}
+
+h1 {
+  @include adjust-font-size-to(38px, 2);
+  @include margin-trailer(.5);
+  font-style: italic;
+}
+
+h2 {
+  @include adjust-font-size-to(21px, 1);
+  @include margin-trailer(1);
+}
+
+.typeset {
+  h1 {
+    @include margin-trailer(-.5);
+  }
+
+  p {
+    @include margin-trailer(1);
+  }
+}
+
+
+
+
+.p--important {
+  @include adjust-font-size-to(17px, 1);
+}
+
+
+.lt-news {
+  &-item {
+
+    &-datetime {
+      color: #bcbcbc;
+      @include adjust-font-size-to(13px);
+      @include margin-leader(.5);
+    }
+
+    & + & {
+      @include margin-leader(1.5);
+    }
+  }
+}
+
+.footer {
+  @include rhythm-margins(2);
+  @include adjust-font-size-to(13px);
+
+  &-links {
+    @include margin-trailer(1);
+
+    > li {
+      display: inline-block;
+
+      & + li {
+        margin-left: 25px;
+      }
+    }
+  }
+
+  &-email {
+    margin-left: 25px;
+  }
+}
+
+.header {
+  height: rhythm(9);
+}
+
+.header-logo {
+  @extend .icon;
+  position: absolute;
+  top: rhythm(1.5);
+  left: 12px;
+  @include sprite($logo);
+}
+
+.header-nav {
+  position: absolute;
+  top: rhythm(2.5);
+  left: 340px;
+  padding-top: 3px;
+
+  > li {
+    display: inline-block;
+    vertical-align: top;
+    @include adjust-font-size-to(14px);
+
+    &:first-child::before {
+      display: none;
+    }
+
+    &::before {
+      content: '/';
+      display: inline-block;
+      margin: 0 8px;
+    }
+
+    > a {
+      font-style: italic;
+    }
+  }
+}
+
+.menu {
+  position: absolute;
+  top: rhythm(6);
+  left: 12px;
+
+  > li {
+    display: inline-block;
+    vertical-align: top;
+    @include adjust-font-size-to(17px, 1);
+
+    & + li {
+      margin-left: 35px;
+    }
+  }
+}
+
+.menu-link {
+  color: #1b1b1b;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover {
+    color: #1a56bf;
+  }
+
+  &::before {
+    @extend .icon;
+    content: '';
+    margin-right: 10px;
+    vertical-align: top;
+  }
+
+  &--services {
+    &::before {
+      @include sprite($menu-services, inline-block);
+    }
+
+    &:hover::before {
+      @include sprite-position($menu-services-hover);
+    }
+  }
+
+  &--clients {
+    &::before {
+      @include sprite($menu-clients, inline-block);
+    }
+
+    &:hover::before {
+      @include sprite-position($menu-clients-hover);
+    }
+  }
+
+  &--analytics {
+    &::before {
+      @include sprite($menu-analytics, inline-block);
+    }
+
+    &:hover::before {
+      @include sprite-position($menu-analytics-hover);
+    }
+  }
+
+  &--contacts {
+    &::before {
+      @include sprite($menu-contacts, inline-block);
+    }
+
+    &:hover::before {
+      @include sprite-position($menu-contacts-hover);
+    }
+  }
+}
+
+.header-call {
+  position: absolute;
+  top: rhythm(4.5);
+  right: 12px;
+  border-bottom: 1px dashed;
+  text-decoration: none;
+  @include adjust-font-size-to(21px, 1);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -(sprite-width($call) + 8);
+    @include sprite($call);
+    @extend .icon;
+  }
+
+  &:hover {
+    border-bottom: none;
+
+    &::before {
+      @include sprite-position($call-hover);
+    }
+  }
+}
+
+.header-phone {
+  @extend .icon;
+  @include sprite($phone);
+  position: absolute;
+  right: 12px;
+  top: rhythm(2);
+}
+
+.ad-services {
+  margin-left: 0;
+  text-align: justify;
+  height: 30px;
+  text-justify: distribute-all-lines;
+  -ms-text-justify: distribute-all-lines;
+
+  &:after {
+    content: '';
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+    width: 100%;
+    height: 0;
+  }
+
+  > li {
+    color: #547ec2;
+    display: inline-block;
+    vertical-align: middle;
+    @include adjust-font-size-to(21px, 1.5);
+
+    &::before {
+      content: '';
+      @extend .icon;
+      @include sprite($shield, inline-block);
+      vertical-align: middle;
+      margin-right: 5px;
+      position: relative;
+      top: -2px;
+    }
+
+    > a {
+      text-decoration: none;
+    }
+  }
+}
+
+// TODO: add to style guide
+.breadcrumbs {
+  > li {
+    display: inline-block;
+    vertical-align: top;
+
+    &::before {
+      content: '/';
+      margin: 0 8px 0 4px;
+    }
+
+    &:first-child::before {
+      display: none;
+    }
+  }
+}
+
+.m-slider {
+  position: relative;
+  cursor: default;
+  height: 560px;
+  min-width: 984px;
+  user-select: none;
+
+
+  .slick-dots {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    z-index: 99;
+
+    > li {
+      display: inline-block;
+      vertical-align: top;
+      font-size: 0;
+      line-height: 0;
+      margin: 0 2px;
+      padding-top: 6px;
+
+      > button {
+        cursor: pointer;
+        margin: 0;
+        outline: none;
+        padding: 0;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        text-indent: 9999px;
+        background: transparent;
+        border: 2px solid #000;
+      }
+
+      &.slick-active > button {
+        background: #1a56bf;
+        border-color: #1a56bf;
+      }
+    }
+  }
+}
+
+.m-slider-slide {
+  position: relative;
+  overflow: hidden;
+  height: 560px;
+}
+
+.m-slide-content {
+  position: absolute;
+  background: #3b588b;
+  background: rgba(59, 88, 139, 0.6);
+  top: rhythm(6.5);
+  left: 50%;
+  color: #fff;
+  margin-left: -170px;
+  border-radius: 50%;
+  width: 340px;
+  height: 340px;
+  @include rhythm-padding(4.75);
+
+  > p {
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, .5);
+    text-align: center;
+    font-style: italic;
+    @include adjust-font-size-to(42px, 2.5);
+  }
+}
+
+
+.m-slider-control {
+  @extend .icon;
+  position: absolute;
+  top: 275px;
+
+  @include sprite($m-slider-next);
+
+  &--next {
+    right: 246px;
+
+    &:hover {
+      @include sprite-position($m-slider-next-hover);
+    }
+  }
+
+  &--prev {
+    left: 246px;
+    @include sprite-position($m-slider-prev);
+
+    &:hover {
+      @include sprite-position($m-slider-prev-hover);
+    }
+  }
+}
+
+.free-offer {
+  display: block;
+  position: absolute;
+  top: 0px;
+  color: #fa114d; // TODO: add color to variable $palette-red
+  border: 2px solid #fa114d;
+  border-radius: 50%;
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  @include rhythm-padding(2.25);
+  right: 12px;
+  z-index: 99;
+
+  &:hover {
+    color: #1b1b1b;
+    text-decoration: none;
+  }
+}
+
+.m-slider-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -480px;
+  width: 960px;
+  height: 560px;
+
+  .free-offer {
+    top: 30px;
+    right: 0;
+  }
+}
+
+
+.m-news-slider {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  background-color: rgba(59, 88, 139, .7);
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+}
+
+.m-news-slide {
+  color: #fff;
+  padding: rhythm(1.5) 15px 0;
+  overflow: hidden;
+  text-align: center;
+
+  > p {
+    height: rhythm(4);
+    overflow: hidden;
+    @include adjust-font-size-to(13px);
+  }
+
+  > h5 {
+    @include adjust-font-size-to(21px, 2);
+    @include margin-trailer(.75);
+  }
+}
+
+.m-news-more {
+  position: absolute;
+  bottom: rhythm(2.25);
+  text-align: center;
+  width: 100%;
+
+  > a {
+    color: #fff;
+  }
+}
+
+.m-news-controls {
+  position: absolute;
+  top: rhythm(2);
+  left: 0;
+  padding: 3px 50px;
+  width: 100%;
+}
+
+.m-news-control {
+  @extend .icon;
+  @include sprite($news-next);
+
+  &--next {
+    float: right;
+
+    &:hover {
+      @include sprite-position($news-next-hover);
+    }
+  }
+
+  &--prev {
+    float: left;
+    @include sprite-position($news-prev);
+
+    &:hover {
+      @include sprite-position($news-prev-hover);
+    }
+  }
+}
+
+.route {
+  position: relative;
+  @extend .icon;
+}
+
+.route--1 {
+  @include sprite($plane-route);
+  overflow: visible;
+}
+
+.route--2 {
+  @include sprite($plane-route-2);;
+  overflow: visible;
+}
+
+.route-plane {
+  @extend .icon;
+  @include sprite($plane);
+}
+
+.parallax {
+  > img {
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.client {
+  height: 220px;
+  border: 2px solid #e6e6e6;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 220px;
+  @include margin-leader(1);
+
+  &:hover {
+    border-color: #768aaf;
+  }
+
+  > img {
+    vertical-align: middle;
+  }
+}
+
+.u-mt--1 { @include margin-leader(1); }
+.u-mt--2 { @include margin-leader(2); }
+.u-mt--3 { @include margin-leader(3); }
+.u-mt--4 {}
+
+
+.p--blackquote {
+  @include adjust-font-size-to(17px);
+  font-style: italic;
+}
+
+
+.u-marginTop--1 { @include margin-leader(1); }
+
+
+h3 {
+  @include adjust-font-size-to(21px);
+}
+
+.ucServices {
+  @include margin-trailer(2);
+}
+
+.ucService-name {
+  position: relative;
+  padding-left: 60px;
+  @include adjust-font-size-to(21px, 1.25);
+  @include margin-trailer(.5);
+
+  &::before {
+    content: '';
+    @extend .icon;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.ucService-name--1::before {
+  @include sprite($service);
+}
+.ucService-name--2::before {
+  @include sprite($service-2);
+}
+.ucService-name--3::before {
+  @include sprite($service-3);
+}
+
+
+.ucService-content {
+  text-align: justify;
+}
+
+.ucPageDescription {
+  @include margin-trailer(2);
+
+  h1 {
+    @include adjust-font-size-to(56px, 2);
+    @include margin-trailer(1);
+
+    &.h1--small {
+      @include adjust-font-size-to(38px);
+      @include margin-trailer(0);
+    }
+  }
+
+  p {
+    @include margin-trailer(1);
+  }
+}
+
+.ucTypeset {
+  p {
+    @include margin-trailer(1);
+  }
+}
+
+.ucTypeset--substrate {
+  background: #f0f0f3;
+  @include margin-leader(1);
+  @include padding-leader(1);
+
+  // TODO: clearfix mixin
+  &::after,
+  &::before {
+    content: '';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+.ucBreadcrumbs {
+  @include margin-trailer(2);
+}
+
+.ucBreadcrumbs-link {
+  display: inline-block;
+  vertical-align: top;
+
+  &::before {
+    content: '/';
+    margin: 0 12px 0 8px;
+  }
+
+  &:first-child::before {
+    display: none;
+  }
+}
+
+.ucClients {}
+
+.ucClient {
+  position: relative;
+  height: 220px;
+  @include margin-trailer(1);
+}
+
+.ucClient-logo {
+  display: block;
+  height: 100%;
+  border: 2px solid #e9e9e9;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 216px;
+
+  > img {
+    vertical-align: middle;
+  }
+
+  &:hover {
+    border-color: #768aaf;
+  }
+}
+
+.ucClient-show {
+  position: absolute;
+  top: 0;
+  right: 30px;
+
+  @extend .icon;
+  @include sprite-width($client);
+  @include sprite-height($client);
+  @include sprite-position($client);
+}
+
+
+.ucAnalyticsPost {
+  border-color: #e2e2e2;
+  @include trailing-border();
+  @include margin-trailer(1.5);
+
+  p {
+    @include margin-trailer(.5);
+  }
+}
+
+.ucAnalyticsPost-date {
+  color: #bcbcbc;
+  @include adjust-font-size-to(13px);
+}
+
+.ucGeography {
+  background: url('../images/geography.png') center no-repeat;
+  position: relative;
+  z-index: -1;
+  margin-top: -110px;
+  height: 640px;
+}
+
+.ucContacts {
+  width: 520px;
+  height: 520px;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: #758aae;
+  color: #fff;
+  @include rhythm-padding(4.5);
+}
+.ucContacts-name {
+  @include adjust-font-size-to(32px);
+}
+.ucContacts-address {
+  @include adjust-font-size-to(25px);
+}
+.ucContacts-email {
+  @include margin-leader(2);
+  @include adjust-font-size-to(21px);
+
+  > a {
+    color: #fff;
+  }
+}
+
+
+.ucProject {
+  border-bottom: 1px solid #e2e2e2;
+  @include margin-trailer(1.5);
+  @include padding-trailer(.5);
+}
+
+.ucProject-name {
+  color: #fb114e;
+  @include adjust-font-size-to(21px);
+  @include margin-trailer(.5);
+}
+
+mark {
+  background: transparent;
+}
+
+.mark--important {
+  color: #fb114e;
+  font-weight: bold;
+  @include adjust-font-size-to(19px, 1);
+}
+
+.mark--bold {
+  font-weight: bold;
+  @include adjust-font-size-to(17px, 1);
+}
+
+.mark--digits {
+  color: #fb114e;
+  font-weight: normal;
+  @include adjust-font-size-to(30px, 1);
+}
+
+
+.ucPaginate {
+  @include adjust-font-size-to(13px);
+
+  > a {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 30px;
+  }
+}
+
+.ucPaginate-page {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+
+  &.active {
+    background: #fb0f4d;
+    border-radius: 50%;
+    text-decoration: none;
+    color: #fff;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+.ucPaginate-prev {
+  margin-right: 60px;
+}
+
+.ucPaginate-next {
+  margin-left: 60px;
+}
+
+@keyframes animateWindow {
+  0% {
+    opacity: .5;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.window {
+  position: relative;
+  width: 640px;
+  border-radius: 4px;
+  padding: 20px 30px;
+  margin: 0 auto;
+  background: #fff;
+  animation: animateWindow .4s;
+}
+
+
+
+.ucReview-name {
+  @include adjust-font-size-to(21px);
+}
+
+.ucReview-content {
+  @include padding-leader(1);
+  @include adjust-font-size-to(13px);
+}
+
+
+.ucRecommendation {
+  padding: 40px;
+}
+.ucRecommendation-content {
+  background: #f2f2f2;
+  border: 1px solid #e9e9e9;
+  height: 750px;
+}
+
+.ucFilterSelect {
+  @include margin-leader(-.5);
+  @include margin-trailer(1.5);
+}

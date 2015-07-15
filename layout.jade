@@ -1,0 +1,66 @@
+doctype
+html(lang="ru", class="no-js")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=984, initial-scale=0")
+    
+    title ЮРКОЛЛЕГИЯ
+
+    link(rel="stylesheet" href="assets/stylesheets/reset.css")
+    link(rel="stylesheet" href="assets/stylesheets/slick.css")
+    link(rel="stylesheet" href="assets/stylesheets/bootstrap.css")
+    link(rel="stylesheet" href="assets/stylesheets/magnific-popup.css")
+    link(rel="stylesheet" href="assets/stylesheets/application.css")
+    link(rel="stylesheet" href="http://basehold.it/20")
+
+    script(src="assets/javascripts/modernizr.js")
+
+  body
+    
+    .header
+      .container
+        a.header-logo(href="/")
+        a.header-call(href="#") Связаться с нами
+        ul.header-nav
+          li: a(href="#") О компании
+          li: a(href="geography.html") География взысканий
+          li: a(href="#") English Version
+        ul.menu
+          li: a.menu-link.menu-link--services(href="services.html") Услуги
+          li: a.menu-link.menu-link--clients(href="clients.html") Клиенты
+          li: a.menu-link.menu-link--analytics(href="analytics.html") Аналитика
+          li: a.menu-link.menu-link--contacts(href="contacts.html") Контакты
+        .header-phone
+
+    block yield
+      
+    .footer
+      .container
+        .row
+          .col-xs-4
+            p 1999-2015 © ООО «ЮРКОЛЛЕГИЯ»
+            p.u-color--gray Все права защищены
+          .col-xs-8
+            ul.footer-links
+              li: a(href="#") О компании
+              li: a(href="#") География взысканий
+              li: a(href="#") Услуги
+              li: a(href="#") Клиенты
+              li: a(href="#") Проекты
+              li: a(href="#") Аналитика
+              li: a(href="#") Контакты
+              
+            p 123007, Москва, Хорошевское шоссе 32а, офисный комплекс «Солид–Кама» оф. 300
+            p
+              | +7 (495) 785 73 90
+              a.footer-email(href="mailto:ur@urcollegia.ru") ur@urcollegia.ru      
+  
+    // scripts
+    script(src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js")
+    script(src="assets/javascripts/jquery.min.js")
+    script(src="assets/javascripts/jquery.formstyler.min.js")
+    script(src="assets/javascripts/jquery.magnific-popup.min.js")
+    script(src="assets/javascripts/jquery.backstretch.min.js")
+    script(src="assets/javascripts/jquery.jkit.1.2.16.min.js")
+    script(src="assets/javascripts/slick.min.js")
+    script(src="assets/javascripts/main.js")

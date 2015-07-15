@@ -1,0 +1,50 @@
+extends layout
+
+block yield
+  
+  .ucBreadcrumbs: .container
+    .ucBreadcrumbs-link: a(href="#") Главная страница
+    .ucBreadcrumbs-link Аналитика
+    a.free-offer(href="#") Бесплатный<br/>экспресс анализ<br/>должника
+
+  .ucPageDescription: .container
+    h1 Аналитика
+    
+  .ucFilterSelect: .container
+    | Показать аналитику за
+    select.select--round
+      option 2015
+      option 2014
+      option 2013
+      option 2012
+    | год
+
+  .ucAnalyticsPosts: .container
+    .ucAnalyticsPost
+      p: a(href="#") География взысканий юридической компании ЮРКОЛЛЕГИЯ в 2014 году
+      p Предлагаем Вашему вниманию информацию о географии взысканий юридической компании ЮРКОЛЛЕГИЯ в 2014 году.
+      p.ucAnalyticsPost-date 06 января 2015
+
+    .ucAnalyticsPost
+      p: a(href="#") Обновление договоров на взыскание долгов
+      p В сентябре 2013 года были улучшены договоры на взыскание долгов, предлагаемые к заключению клиентам компании «ЮРКОЛЛЕГИЯ». При внесении изменений в договоры мы приняли во внимание пожелания наших клиентов и проанализировали проекты.
+      p.ucAnalyticsPost-date 06 января 2015    
+
+    .ucAnalyticsPost
+      p: a(href="#") Взыскание по исполнительным листам
+      p Если ранее, одним из этапов взыскания по исполнительным листам было обращение в службу судебных приставов, то при новой технологии взыскания обращение в ССП используется только в случае наличия информации об имуществе должника, которое может быть реализовано в рамках процедуры исполнительного производства..
+      p.ucAnalyticsPost-date 06 января 2015
+
+
+  .container
+    .ucPaginate
+      a.ucPaginate-prev(href="#") Предыдущая страница
+      a.ucPaginate-page(href="#") 1
+      a.ucPaginate-page(href="#") 2
+      a.ucPaginate-page(href="#") 3
+      a.ucPaginate-page.active(href="#") 4
+      a.ucPaginate-page(href="#") 5
+      a.ucPaginate-page(href="#") 6
+      a.ucPaginate-page(href="#") ...
+      a.ucPaginate-page(href="#") 60
+      a.ucPaginate-next(href="#") Следующая страница

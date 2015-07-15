@@ -1,0 +1,59 @@
+$call-hover: -46px -292px 46px 46px;
+$call: -0px -292px 46px 46px;
+$client: -195px -227px 61px 61px;
+$close-window: -332px -292px 35px 35px;
+$logo: -148px -0px 310px 70px;
+$m-slider-next-hover: -166px -148px 70px 70px;
+$m-slider-next: -236px -148px 70px 70px;
+$m-slider-prev-hover: -306px -148px 70px 70px;
+$m-slider-prev: -376px -148px 70px 70px;
+$menu-analytics-hover: -211px -292px 39px 42px;
+$menu-analytics: -172px -292px 39px 42px;
+$menu-clients-hover: -356px -227px 46px 42px;
+$menu-clients: -402px -227px 46px 42px;
+$menu-contacts-hover: -132px -292px 40px 42px;
+$menu-contacts: -92px -292px 40px 42px;
+$menu-services-hover: -250px -292px 41px 38px;
+$menu-services: -291px -292px 41px 38px;
+$news-next-hover: -87px -338px 29px 34px;
+$news-next: -58px -338px 29px 34px;
+$news-prev-hover: -29px -338px 29px 34px;
+$news-prev: -0px -338px 29px 34px;
+$phone: -148px -70px 265px 49px;
+$plane-route-2: -0px -0px 148px 148px;
+$plane-route: -0px -148px 166px 79px;
+$plane: -306px -227px 50px 44px;
+$select-arrow: -256px -227px 50px 50px;
+$service-2: -130px -227px 65px 65px;
+$service-3: -65px -227px 65px 65px;
+$service: -0px -227px 65px 65px;
+$shield: -413px -70px 41px 43px;
+$topbar-close: -367px -292px 33px 33px;
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 3) - 20;
+}
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 4) - 20;
+}
+@function sprite-width($sprite) {
+  @return nth($sprite, 3) - 20;
+}
+@function sprite-height($sprite) {
+  @return nth($sprite, 4) - 20;
+}
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 1) - 10;
+  $sprite-offset-y: nth($sprite, 2) - 10;
+  background-position: $sprite-offset-x $sprite-offset-y;
+}
+@mixin sprite($sprite, $display: block) {
+  @include sprite-position($sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: $display;
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+.icon {
+  background-image: url("../images/sprite.png");
+}
