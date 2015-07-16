@@ -75,6 +75,21 @@ h2 {
   @include margin-trailer(1);
 }
 
+strong{
+  font-weight: bold;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='tel']{
+  width: 100%;
+  border: 1px solid #dbdbdb;
+  padding-left: 10px;
+  padding-right: 10px;
+  @include margin-trailer(1);
+  @include adjust-font-size-to(13px, 1.5);
+}
+
 .typeset {
   h1 {
     @include margin-trailer(-.5);
@@ -887,4 +902,113 @@ mark {
 .ucFilterSelect {
   @include margin-leader(-.5);
   @include margin-trailer(1.5);
+}
+
+.ucContacts {
+  width: 520px;
+  height: 520px;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: #758aae;
+  color: #fff;
+  @include rhythm-padding(4.5);
+}
+.ucContacts-name {
+  @include adjust-font-size-to(32px);
+}
+.ucContacts-address {
+  @include adjust-font-size-to(25px);
+}
+.ucContacts-email {
+  @include margin-leader(2);
+  @include adjust-font-size-to(21px);
+
+  > a {
+    color: #fff;
+  }
+}
+
+.uc404{
+  @extend .ucContacts;
+
+}
+.uc404-header{
+  @include adjust-font-size-to(161px);
+  @include padding-trailer(.5);
+}
+.uc404-name{
+  @include adjust-font-size-to(30px);
+  @include padding-trailer(.5);
+}
+.uc404-descr{
+  @include adjust-font-size-to(21px);
+  @include padding-trailer(.5);
+}
+.uc404-text{
+
+  @include padding-trailer(.5);
+}
+.uc404-link{
+  @include adjust-font-size-to(17px);
+
+  > a {
+    font-weight: bold;
+    color: #fff;
+  }
+}
+
+
+.ucLabel{
+  @include adjust-font-size-to(13px);
+}
+
+
+.ucRadioGroup{
+  @include adjust-font-size-to(13px);
+  @include padding-trailer(1);
+  display: inline-block;
+  margin-right: 15px;
+
+  strong{
+    @include adjust-font-size-to(15px);
+  }
+}
+
+.usFormInfo{
+  @include adjust-font-size-to(13px);
+  @include padding-trailer(1);
+  color: #bcbcbc;
+}
+
+.ucBtnSend{
+  @include adjust-font-size-to(12px);
+  @include padding-trailer(.5);
+  @include padding-leader(.5);
+  padding-left: 30px;
+  padding-right: 30px;
+  display: inline-block;
+  text-align: center;
+  background-color: #1b55c0;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  
+  &:hover,
+  &:focus{
+    color: #fff;
+  }
+}
+
+.usForm{
+  td:first-child{
+    width: 245px;
+    padding-right: 15px;
+  }
+
+  hr{
+    @include margin-leader(1);
+    @include margin-trailer(1);
+  }
 }

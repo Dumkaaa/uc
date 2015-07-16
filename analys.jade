@@ -1,0 +1,154 @@
+extends layout
+
+block yield
+  .ucBreadcrumbs: .container
+    .ucBreadcrumbs-link: a(href="#") Главная страница
+    .ucBreadcrumbs-link Клиенты
+
+  .ucPageDescription: .container
+    h1 Бесплатный экспресс-анализ
+    p Если Вас заинтересовали юридические услуги по взысканию долгов,  можете заполнить форму ниже <br>или связаться с нами по телефону (495) 785 73 90
+
+  .usForm
+    .container
+      form(id="", method="", action="")
+        table
+          tr
+            td
+              label.ucLabel(for="q-1") Ваш должник:
+            td
+              .ucRadioGroup
+                input(type="radio")
+                span: strong Юридическое лицо
+              .ucRadioGroup
+                input(type="radio")
+                span: strong ИП
+              .ucRadioGroup
+                input(type="radio")
+                span Физическое лицо
+              p.usFormInfo К сожалению Юридическая компания ЮРКОЛЛЕГИЯ занимается взысканием долгов только с юридических лиц и ИП
+          tr
+            td
+              label.ucLabel(for="q-2") Сумма долга: 
+            td
+              .ucRadioGroup
+                input(type="radio")
+                span: strong Свыше 700 000 руб.
+              .ucRadioGroup
+                input(type="radio")
+                span Ниже 700 000 руб. 
+          tr
+            td
+              label.ucLabel(for="q-3") Введена ли в отношении должника процедура наблюдения/банкротства?
+            td
+              .ucRadioGroup
+                input(type="radio")
+                span Да
+              .ucRadioGroup
+                input(type="radio")
+                span: strong Нет
+              .ucRadioGroup
+                input(type="radio")
+                span: strong Не знаю
+          tr
+            td
+              label.ucLabel(for="q-4") Ваше имя:
+            td
+              input(type="text" id="q-4")
+          tr
+            td
+              label.ucLabel(for="q-5") Email:
+            td
+              input(type="text" id="q-5")
+          tr
+            td
+              label.ucLabel(for="q-6") Контактный телефон:
+            td
+              input(type="text" id="q-6")
+          tr
+            td
+            td
+              a.ucBtnSend(href="#") Отправить заявку
+    hr
+    .container
+      p: strong Для проведения бесплатного экспресс-анализа перспективы взыскания долга, ответьте ещё на несколько вопросов. В течение 24 часов в будние дни, Вы получите информацию о перспективах взыскания долга и условиях работы.
+      br
+      form(id="", method="", action="")
+        table
+          tr
+            td
+              label.ucLabel(for="q-7") Ведёт ли компания-должник деятельность от того же юрлица?
+            td
+              .ucRadioGroup
+                input(type="radio")
+                span Да
+              .ucRadioGroup
+                input(type="radio")
+                span Нет
+              .ucRadioGroup
+                input(type="radio")
+                span Не знаю
+              p.usFormInfo Информация необходима для проверки наличия у должника рабочих контактных телефонов. Мы гарантируем, что до заключения договора на взыскание ни одного телефонного звонка от лица Кредитора должнику совершено не будет.
+          tr
+            td
+              label(for="q-8") Стационарный, либо при его отсутствии контактный телефон должника 
+            td
+              input(type="text" id="q-8")
+              p.usFormInfo Например, +7 (495) 600-30-00
+          tr
+            td
+              label.ucLabel(for="q-9") Обращались ли Вы в арбитражный суд для взыскания долга?
+            td
+              .ucRadioGroup
+                input(type="radio")
+                span Да
+              .ucRadioGroup
+                input(type="radio")
+                span Нет
+          tr
+            td 
+              label.ucLabel(for="q-10") Наименование компании должника:
+            td
+              input(type="text" id="q-10") 
+          tr
+            td 
+              label.ucLabel(for="q-11") ИНН должника:
+            td
+              input(type="text" id="q-11") 
+          tr
+            td 
+              label.ucLabel(for="q-12") Сумма основного долга:
+            td
+              input(type="text" id="q-12") 
+          tr
+            td 
+              label.ucLabel(for="q-13") Имеются ли документы, подтверждающие долг?
+            td
+              .ucRadioGroup
+                input(type="radio")
+                span Да
+              .ucRadioGroup
+                input(type="radio")
+                span Нет
+              .ucRadioGroup
+                input(type="radio")
+                span Не знаю
+          tr
+            td 
+              label.ucLabel(for="q-14") Оспаривает ли должник долг?
+            td
+              .ucRadioGroup
+                input(type="radio")
+                span Да
+              .ucRadioGroup
+                input(type="radio")
+                span Нет
+              .ucRadioGroup
+                input(type="radio")
+                span Не знаю
+          tr
+            td
+            td
+              a.ucBtnSend(href="#") Отправить заявку
+
+

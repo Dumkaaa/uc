@@ -1,0 +1,17 @@
+extends layout
+
+block yield
+  
+  .ucBreadcrumbs: .container
+    .ucBreadcrumbs-link: a(href="#") Главная страница
+    .ucBreadcrumbs-link Ошибка 404
+  
+  .uc404
+    p.uc404-header 404
+    p.uc404-name Страница не найдена
+    p.uc404-descr Cтраница была удалена или не существовала
+    p.uc404-text  
+      |Попробуйте вернуться назад или перейти
+      br
+      |на главную страницу сайта 
+    p.uc404-link: a(href="#") Перейти на главную
