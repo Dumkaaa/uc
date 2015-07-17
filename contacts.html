@@ -32,7 +32,7 @@
     <div class="ucBreadcrumbs">
       <div class="container">
         <div class="ucBreadcrumbs-link"><a href="#">Главная страница</a></div>
-        <div class="ucBreadcrumbs-link">Контакты</div>
+        <div class="ucBreadcrumbs-link">Контакты</div><a href="#" class="free-offer">Бесплатный<br/>экспресс анализ<br/>должника</a>
       </div>
     </div>
     <div class="ucPageDescription">
@@ -42,8 +42,16 @@
     </div>
     <div class="ucContacts">
       <p class="ucContacts-name">Юридическая компания<br />ЮРКОЛЛЕГИЯ</p>
-      <p class="ucContacts-address">123007, Москва, Хорошевское шоссе, д.32 А. Офисный комплекс «Солид–Кама», 2 подъезд, 3 этаж, офис 300</p>
+      <p class="ucContacts-phone">+7 (495) 785 73 90</p>
+      <p class="ucContacts-address">123007, Москва, Хорошевское шоссе, д.32 А. Офисный комплекс «Солид–Кама»,<br>2 подъезд, 3 этаж, офис 300</p>
       <p class="ucContacts-email"><a href="mailto:ur@urcollegia.ru">ur@urcollegia.ru</a></p>
+    </div>
+    <div id="map" class="ucMap"></div>
+    <div class="ucTypeset">
+      <div class="container">
+        <p>Офис юридической компании ЮРКОЛЛЕГИЯ расположен в Москве со дня основания компании в 1999 году.Все проекты по взысканию долгов в регионах России ведут специалисты из единого московского офиса компании.Мы используем отлаженный механизм дистанционного взыскания долгов с региональных должников,  и при необходимости, наши специалисты всегда выезжают в место нахождения должника. </p>
+        <p class="p--important"><b>Для взыскания долгов в любом регионе РФ, обращайтесь в единый офис компании ЮРКОЛЛЕГИЯ.</b></p><br><br>
+      </div>
     </div>
     <div class="footer">
       <div class="container">
@@ -69,7 +77,7 @@
       </div>
     </div>
     <!-- scripts-->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
     <script src="assets/javascripts/jquery.min.js"></script>
     <script src="assets/javascripts/jquery.formstyler.min.js"></script>
     <script src="assets/javascripts/jquery.magnific-popup.min.js"></script>
@@ -77,5 +85,32 @@
     <script src="assets/javascripts/jquery.jkit.1.2.16.min.js"></script>
     <script src="assets/javascripts/slick.min.js"></script>
     <script src="assets/javascripts/main.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      window.onload = function(){
+        function init(){
+          var mapOptions = {
+            zoom: 17,
+            rotateCntrol: false,
+            panControl:false,
+            scaleControl:false,
+            scrollwheel:false,
+            streetViewControl:false,
+            overviewMapControl:false,
+            mapTypeControl:false,
+            center: new google.maps.LatLng(57.119253, 65.565033)
+          };
+          var image = './assets/images/marker.png';
+          var mapElement = document.getElementById('map');
+          var map = new google.maps.Map(mapElement, mapOptions);
+          var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(57.119253, 65.565033),
+            map: map,
+            icon: image
+          });
+        }
+        init();
+      };
+    </script>
   </body>
 </html>
